@@ -1,3 +1,4 @@
+---
 name: "yamllint"
 description: "installs yaml lint"
 inputs:
