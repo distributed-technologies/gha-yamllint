@@ -1,2 +1,15 @@
-# gha-yamllint
-Repo that holds an action to run yamllint and the config to use.
+# Yamllint action
+
+This action helps to lint our repositories, in a consistent manner.
+
+## Inputs
+
+## `path`
+
+**Required** The to the files to lint. Default `"."`.
+
+## Example usage
+
+uses: actions/gha-yamllint@v1
+with:
+  path: '.'
