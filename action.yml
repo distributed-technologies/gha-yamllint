@@ -1,0 +1,22 @@
+name: "yamllint"
+description: "installs yaml lint"
+inputs:
+  path:
+    description: "path to run linter on"
+    required: true
+    default: .
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v3
+      with:
+        repository: distributed-technologies/gha-yamllint
+        path: yamllint
+
+    - name: Install yamllint
+      run: pip install yamllint
+      shell: bash
+
+    - name: Lint YAML files
+      run: "yamllint -s -d yamllint/config.yaml ${{ inputs.path }}"
+      shell: bash
